@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171916">
+  <meta name="description" content="Сергей, с днём рождения! Смелых идей, красивого кода и счастья с временем жизни 'static.">
+  <meta property="og:title" content="Сергей, с днём рождения!">
+  <meta property="og:description" content="Пусть жизнь возвращает Ok, а всё самое хорошее имеет lifetime 'static.">
+  <meta property="og:type" content="website">
+  <title>Сергей, с днём рождения!</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff7849'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='monospace' font-weight='bold' font-size='42' fill='%23171916'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#greeting">К поздравлению</a>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="wordmark" aria-label="Sergey birthday">S<span>::</span>birthday</div>
+      <span class="header-note">особенный день / особенный человек</span>
+    </header>
+
+    <main id="greeting">
+      <section class="hero" aria-labelledby="birthday-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span aria-hidden="true">[</span> С любовью к Rust. И к жизни. <span aria-hidden="true">]</span></p>
+          <h1 id="birthday-title">Сергей,<br>с днём<br>рождения<span class="exclamation">!</span></h1>
+          <p class="intro">Пусть жизнь возвращает <code>Ok</code>,<br class="desktop-break"> а счастье имеет lifetime <code>'static</code>.</p>
+          <p class="hero-aside">Сегодня все хорошие пожелания — в твою сторону.</p>
+        </div>
+
+        <div class="program">
+          <div class="editor-header">
+            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span>birthday.rs</span>
+            <span class="file-language">Rust</span>
+          </div>
+          <div class="code-area" aria-label="Пример Rust-программы с поздравлением">
+            <pre><code><span class="line"><span class="comment">// Для Сергея. Без единого unsafe.</span></span>
+<span class="line"><span class="keyword">fn</span> <span class="function">main</span>() {</span>
+<span class="line">    <span class="keyword">let</span> name = <span class="string">"Сергей"</span>;</span>
+<span class="line">    <span class="keyword">let</span> wishes = [</span>
+<span class="line">        <span class="string">"Смелых идей"</span>,</span>
+<span class="line">        <span class="string">"Красивых решений"</span>,</span>
+<span class="line">        <span class="string">"Счастья без unwrap()"</span>,</span>
+<span class="line">    ];</span>
+<span class="line"></span>
+<span class="line">    <span class="macro">println!</span>(<span class="string">"{name}, с днём рождения!"</span>);</span>
+<span class="line">    <span class="keyword">for</span> wish <span class="keyword">in</span> wishes {</span>
+<span class="line">        <span class="macro">println!</span>(<span class="string">"✓ {wish}"</span>);</span>
+<span class="line">    }</span>
+<span class="line">}</span></code></pre>
+          </div>
+          <div class="program-actions">
+            <button id="run-greeting" type="button" aria-controls="greeting-output">
+              <svg viewBox="0 0 18 18" width="18" height="18" aria-hidden="true"><path d="M5 3.5 14 9l-9 5.5z" fill="currentColor"/></svg>
+              <span>Запустить поздравление</span>
+            </button>
+            <span class="run-hint">один запуск — много хорошего</span>
+          </div>
+          <div class="terminal">
+            <div class="terminal-label"><span aria-hidden="true">&gt;_</span> вывод поздравления</div>
+            <div id="greeting-output" role="status" aria-live="polite" aria-atomic="true">
+              <p class="terminal-idle">Всё готово. Осталось добавить праздник.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wishes" aria-labelledby="wishes-title">
+        <div class="section-heading">
+          <h2 id="wishes-title">Что хочется пожелать</h2>
+          <span class="section-meta">без ограничений по времени жизни</span>
+        </div>
+        <div class="wish-grid">
+          <article class="wish">
+            <span class="wish-number" aria-hidden="true">01 /</span>
+            <h3>Смелости<br>создавать.</h3>
+            <p>Пусть находятся идеи, от которых загораются глаза, и время, чтобы воплотить их в жизнь. В коде и за его пределами.</p>
+            <code class="wish-code">ideas.into_iter().map(realize)</code>
+          </article>
+          <article class="wish">
+            <span class="wish-number" aria-hidden="true">02 /</span>
+            <h3>Сил на всё<br>любимое.</h3>
+            <p>Здоровья, энергии и спокойствия. Чтобы хватало сил на большие планы, маленькие радости и хорошее ничегонеделание.</p>
+            <code class="wish-code">energy: &amp;'static str</code>
+          </article>
+          <article class="wish">
+            <span class="wish-number" aria-hidden="true">03 /</span>
+            <h3>Своих людей<br>рядом.</h3>
+            <p>Тех, с кем можно быть собой, смеяться до слёз и делить хорошие моменты. Пусть тепло всегда будет взаимным.</p>
+            <code class="wish-code">Arc::clone(&amp;friendship)</code>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <span class="closing-label">главное возвращаемое значение</span>
+        <h2 id="closing-title">Ok<span>(</span>счастье<span>)</span></h2>
+        <p>Пусть следующий год жизни будет полон того,<br class="desktop-break"> ради чего хочется просыпаться по утрам.</p>
+        <div class="signature">С днём рождения, Сергей. <span>Пусть всё получается.</span></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Собрано с теплом <span aria-hidden="true">♥</span></span>
+      <span>0 паник · ∞ поводов для радости</span>
+    </footer>
+  </div>
+</body>
+</html>
